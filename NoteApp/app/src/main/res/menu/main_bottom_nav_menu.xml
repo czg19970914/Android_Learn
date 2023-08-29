@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<!--    <item-->
+<!--            android:id="@+id/note_item"-->
+<!--            android:icon="@drawable/note_item"-->
+<!--            android:title="NOTE"/>-->
+    <item
+            android:id="@+id/note_fragment"
+            android:icon="@drawable/note_item"
+            android:title="NOTE"/>
+<!--    <item-->
+<!--            android:id="@+id/todo_item"-->
+<!--            android:icon="@drawable/todo_item"-->
+<!--            android:title="TODO"/>-->
+    <item
+            android:id="@+id/todo_fragment"
+            android:icon="@drawable/todo_item"
+            android:title="TODO"/>
+</menu>
