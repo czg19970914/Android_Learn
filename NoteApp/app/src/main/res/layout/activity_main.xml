@@ -5,28 +5,49 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/gainsboro"
         tools:context=".activities.MainActivity">
-
-<!--    <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:text="主界面"-->
-<!--            android:textSize="30dp"-->
-<!--            app:layout_constraintBaseline_toTopOf="@id/main_bottom_nav"/>-->
-
-    <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/nav_host_fragment"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/main_bottom_navigation"
-            android:name="androidx.navigation.fragment.NavHostFragment"
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintBaseline_toTopOf="@id/main_bottom_nav"/>
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/main_bottom_nav">
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/main_tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:animationCache="true"
+                android:background="@color/transparent">
+            <TextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="bold"
+                    android:text="@string/tool_bar_note_title"
+                    android:textSize="@dimen/tool_bar_title_max_size"
+                    tools:ignore="SpUsage"/>
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/nav_host_fragment"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/main_bottom_navigation"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="50dp"/>
+
+    </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/main_bottom_nav"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@color/gainsboro"
             app:menu="@menu/main_bottom_nav_menu"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
